@@ -1,0 +1,105 @@
+body {
+    border: 3px solid rgb(0, 0, 0);
+}
+
+.board {
+    background-color: rgb(218, 255, 181);
+}
+
+h1 {
+    font-family: fantasy;
+    font-size: 40px;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    margin-bottom: 100px;
+   
+}
+
+
+.container2 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+   
+}
+
+.box {
+    width: 230px;
+    height: 230px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c1, .c3, .c6{
+    background-color: cornflowerblue;
+}
+
+.c2, .c4, .c7{
+    background-color: aliceblue;
+}
+
+.c5, .c8 {
+    background-color: darkseagreen;
+}
+
+.box:hover {
+    transform: scale(1.3);
+}
+
+.c1, .c5, .c7 {
+    transform: rotate(-10deg);
+    animation: firstAnimation 2s ease-in 0s;
+    
+}
+
+.c2, .c4 {
+    transform: rotate(10deg);
+    animation: secondAnimation 3s ease-out 0s;
+}
+
+.c3, .c6, .c8 {
+    transform: rotate(-15deg);
+    animation: thirdAnimation 4s cubic-bezier(0.69, -0.35, 0.49, 1.2) 0s;
+}
+
+@keyframes firstAnimation {
+    0%{
+        opacity: 0;
+        scale: 5;
+        transform: translate(200px, 100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px, 0px) rotate(360deg);
+}
+}
+
+@keyframes secondAnimation {
+    0%{
+        opacity: 0;
+        scale: 5;
+        transform: translate(500px, 300px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px, 0px) rotate(-360deg);
+}
+}
+
+@keyframes thirdAnimation {
+    0%{
+        opacity: 0;
+        scale: 5;
+        transform: translate(100px, 50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px, 0px) rotate(-260deg);
+}
+}
